@@ -1,9 +1,12 @@
 {
+  "homepage": "http://sachiko0811.github.io/crud-demo",
   "name": "crud-demo",
   "version": "1.0.0",
   "description": "Demo for Crud Express MongoDB article at https://zellwk.com/blog/crud-express-mongodb",
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node pm2.js",
     "restart": "node pm2.js crud-demo --update-env",
     "dev": "nodemon server.js",
@@ -20,6 +23,7 @@
     "pm2": "^4.2.3"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "nodemon": "^2.0.2",
     "rsync": "^0.6.1"
   }
