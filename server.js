@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
@@ -9,9 +10,10 @@ const app = express()
 // Updates environment variables
 // @see https://zellwk.com/blog/environment-variables/
 
+ 
 
 // Replace process.env.DB_URL with your actual connection string
-const connectionString = "mongodb+srv://sachiko95:lucky7@cluster0.ilksw.mongodb.net/blog-engine?retryWrites=true&w=majority"
+const connectionString = `${process.env.DB_URL}`
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
