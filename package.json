@@ -8,6 +8,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "node pm2.js",
+    "build": "react-scripts build",
     "restart": "node pm2.js crud-demo --update-env",
     "dev": "nodemon server.js",
     "sync": "node sync.js"
